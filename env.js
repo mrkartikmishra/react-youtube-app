@@ -45,5 +45,5 @@ window.env = {
   "COLORTERM": "truecolor",
   "npm_config_prefix": "/usr/local",
   "npm_node_execpath": "/usr/local/bin/node",
-  "YOUTUBE_API_KEY": "AIzaSyAK_6kdnbG6BXopoIYWrmXm20RaDjef02I"
+  "REACT_APP_YOUTUBE_API_KEY": "AIzaSyDmmwgXjgbP2B-rufWB7bO1n2T57tn6Hhg"
 };
