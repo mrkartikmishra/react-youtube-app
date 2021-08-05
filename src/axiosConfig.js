@@ -1,5 +1,4 @@
 import axios from 'axios';
-import env from 'react-dotenv';
 
 export default axios.create({
     baseURL: 'https://www.googleapis.com/youtube/v3',
@@ -7,6 +6,6 @@ export default axios.create({
         part: 'snippet',
         type: 'video',
         maxResults: 10,
-        key: 'AIzaSyAK_6kdnbG6BXopoIYWrmXm20RaDjef02I'
+        key: process.env.REACT_APP_YOUTUBE_API_KEY
     }
 });
