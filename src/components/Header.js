@@ -10,7 +10,7 @@ class Header extends Component {
 
     onSubmitHandler = (term) => {
         this.setState({term : term});
-        this.props.onGetSearchTerm(this.state.term);
+        this.props.onGetSearchTerm(term);
     }
 
     render() {
