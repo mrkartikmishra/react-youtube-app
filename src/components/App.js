@@ -1,41 +1,42 @@
 import React from 'react';
 
-import SearchBar from './SearchBar';
 import VideoList from './VideoList';
 import axios from '../axiosConfig';
 import VideoDetail from './VideoDetail';
 import Loader from './loader';
+import Header from './Header';
 
 
 class App extends React.Component {
 
-    state = {videos: [], selectedVideo: ''};
+    state = {videos: [], selectedVideo: '', searchterm: ''};
 
     componentDidMount() {
         this.onSubmitHandler('technologies');
     }
 
-    onSubmitHandler = (searchTerm) => {
-        axios.get('/search', {
+    onSubmitHandler = async (searchTerm) => {
+        const response = await axios.get('/search', {
             params: {
                 q: searchTerm
             }
-        })
-        .then((videos) => {
-            this.setState({videos: videos.data.items});
-
-            this.setState({selectedVideo : videos.data.items[0].id.videoId})
         });
+        this.setState({videos: response.data.items, selectedVideo : response.data.items[0]});
     }
 
-    onSelectVideo = (videoId) => {
-        this.setState({selectedVideo: videoId})
+    onGetSearchTerm = (term) => {
+        this.setState({searchTerm: term});
+        this.onSubmitHandler(term);
+    }
+
+    onSelectVideo = (video) => {
+        this.setState({selectedVideo: video})
     }
 
     render() {
         return (
             <div className="ui container">
-                <SearchBar onSubmit={this.onSubmitHandler}/>
+                <Header onGetSearchTerm={this.onGetSearchTerm}/>
                 {this.state.videos.length === 0 ? <Loader /> : 
                 <div className="ui grid">
                     <div className="row">

@@ -4,7 +4,6 @@ import VideoItem from './VideoItem';
 class VideoList extends Component {
 
     onSelectVideo = (video) => {
-        console.log("hello", video);
         this.props.onSelectVideo(video);
     }
 
@@ -17,7 +16,7 @@ class VideoList extends Component {
                     <div 
                         className="ui relaxed list" 
                         key={video.id.videoId}>
-                            <VideoItem onSelectVideo={() => this.onSelectVideo(video.id.videoId)} video={video} />
+                            <VideoItem onSelectVideo={() => this.onSelectVideo(video)} video={video} />
                     </div>
                 );
             })
