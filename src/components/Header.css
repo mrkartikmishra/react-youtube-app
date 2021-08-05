@@ -17,6 +17,7 @@
 .icon-size {
     font-size: 20px !important;
     cursor: pointer;
+    margin-left: 10px !important;
 }
 
 .flexitem {
