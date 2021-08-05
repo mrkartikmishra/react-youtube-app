@@ -7,6 +7,6 @@ export default axios.create({
         part: 'snippet',
         type: 'video',
         maxResults: 10,
-        key: env.YOUTUBE_API_KEY
+        key: 'AIzaSyAK_6kdnbG6BXopoIYWrmXm20RaDjef02I'
     }
 });
