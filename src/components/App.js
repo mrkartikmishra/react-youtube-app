@@ -38,13 +38,15 @@ class App extends React.Component {
             <div className="ui container">
                 <Header onGetSearchTerm={this.onGetSearchTerm}/>
                 {this.state.videos.length === 0 ? <Loader /> : 
-                <div className="ui grid">
-                    <div className="row">
-                        <div className="eleven wide column">
-                            <VideoDetail video={this.state.selectedVideo} />
-                        </div>
-                        <div className="five wide column">
-                            <VideoList onSelectVideo={this.onSelectVideo} videos={this.state.videos} />
+                <div className="itemCls">
+                    <div className="ui grid">
+                        <div className="row">
+                            <div className="eleven wide column">
+                                <VideoDetail video={this.state.selectedVideo} />
+                            </div>
+                            <div className="five wide column">
+                                <VideoList onSelectVideo={this.onSelectVideo} videos={this.state.videos} />
+                            </div>
                         </div>
                     </div>
                 </div>
